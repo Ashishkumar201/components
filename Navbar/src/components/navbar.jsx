@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import "./Navbar.css"; // Make sure this is imported
+import "./Navbar.css";
 
 const Navbar = () => {
   const [openDropdown1, setOpenDropdown1] = useState(false);
   const [openDropdown2, setOpenDropdown2] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${darkMode ? "dark" : ""}`}>
       <div className="navbar-brand">MyApp</div>
       <ul className="navbar-links">
         <li><a href="#">Home</a></li>
@@ -44,6 +47,13 @@ const Navbar = () => {
               <li><a href="#">Contact</a></li>
             </ul>
           )}
+        </li>
+
+        {/* Dark Mode Toggle */}
+        <li>
+          <button className="dark-toggle" onClick={toggleDarkMode}>
+            {darkMode ? "☀ Light" : "🌙 Dark"}
+          </button>
         </li>
       </ul>
     </nav>

@@ -1,3 +1,4 @@
+/* Base styles */
 .navbar {
     background-color: #fff;
     padding: 16px 24px;
@@ -6,12 +7,22 @@
     align-items: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar.dark {
+    background-color: #1f2937;
+    color: #f9fafb;
   }
   
   .navbar-brand {
     font-size: 24px;
     font-weight: bold;
-    color: #4f46e5; /* Indigo */
+    color: #4f46e5;
+  }
+  
+  .navbar.dark .navbar-brand {
+    color: #a5b4fc;
   }
   
   .navbar-links {
@@ -23,37 +34,38 @@
     align-items: center;
   }
   
-  .navbar-links li a {
+  .navbar-links li a,
+  .dropdown-button {
     text-decoration: none;
     color: #333;
     transition: color 0.3s ease;
-  }
-  
-  .navbar-links li a:hover {
-    color: #4f46e5;
-  }
-  
-  .dropdown {
-    position: relative;
-  }
-  
-  .dropdown-button {
     background: none;
     border: none;
     font: inherit;
     cursor: pointer;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 4px;
   }
   
+  .navbar.dark .navbar-links li a,
+  .navbar.dark .dropdown-button {
+    color: #f3f4f6;
+  }
+  
+  .navbar-links li a:hover,
   .dropdown-button:hover {
     color: #4f46e5;
   }
   
+  .navbar.dark .navbar-links li a:hover,
+  .navbar.dark .dropdown-button:hover {
+    color: #a5b4fc;
+  }
+  
   .arrow {
     font-size: 12px;
+  }
+  
+  .dropdown {
+    position: relative;
   }
   
   .dropdown-menu {
@@ -68,6 +80,11 @@
     z-index: 100;
   }
   
+  .navbar.dark .dropdown-menu {
+    background-color: #374151;
+    border-color: #4b5563;
+  }
+  
   .dropdown-menu li {
     padding: 10px 16px;
   }
@@ -79,7 +96,38 @@
     text-decoration: none;
   }
   
+  .navbar.dark .dropdown-menu li a {
+    color: #f3f4f6;
+  }
+  
   .dropdown-menu li:hover {
     background-color: #f3f4f6;
+  }
+  
+  .navbar.dark .dropdown-menu li:hover {
+    background-color: #4b5563;
+  }
+  
+  /* Toggle Button */
+  .dark-toggle {
+    background: #e5e7eb;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .dark-toggle:hover {
+    background: #d1d5db;
+  }
+  
+  .navbar.dark .dark-toggle {
+    background: #4b5563;
+    color: #f9fafb;
+  }
+  
+  .navbar.dark .dark-toggle:hover {
+    background: #6b7280;
   }
   
