@@ -17,10 +17,12 @@ const Navbar = () => {
 
         {/* Dropdown 1 - Optional */}
         <li className="dropdown">
-          <button
-            className="dropdown-button"
-            onClick={() => setOpenDropdown1(!openDropdown1)}
-          >
+        <button
+          className="dropdown-button"
+          aria-expanded={openDropdown1}
+          onClick={() => setOpenDropdown1(!openDropdown1)}
+        >
+
             Services <span className="arrow">▼</span>
           </button>
           {openDropdown1 && (
